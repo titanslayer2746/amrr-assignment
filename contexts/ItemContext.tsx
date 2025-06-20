@@ -62,10 +62,12 @@ export function ItemProvider({ children }: { children: React.ReactNode }) {
     // Load items from localStorage or use sample data
     const savedItems = localStorage.getItem("items");
     if (savedItems) {
-      const parsedItems = JSON.parse(savedItems).map((item: any) => ({
-        ...item,
-        createdAt: new Date(item.createdAt),
-      }));
+      const parsedItems = (JSON.parse(savedItems) as Item[]).map(
+        (item: Item) => ({
+          ...item,
+          createdAt: new Date(item.createdAt),
+        })
+      );
       setItems(parsedItems);
     } else {
       setItems(sampleItems);
