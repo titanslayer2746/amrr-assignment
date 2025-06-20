@@ -1,47 +1,84 @@
-# AMRR Item Management Assignment
+# AMRR Item Management
 
-A minimal, clean Next.js app to manage items for AMRR TechSols Pvt Ltd internship assignment.
+A modern web application for managing inventory items with a clean, responsive interface built with Next.js and React.
 
 ## Features
 
-- **Add Item**: Add a new item with name, type, description, cover image, and additional images.
-- **View Items**: See all items (static + user-added) in a responsive grid.
-- **Item Details**: Click any item to view all details and images in a modal with a simple carousel.
-- **Enquire**: Button in modal shows a success toast (mock action).
-- **Persistent**: Items are saved in localStorage.
-- **Minimal UI**: Built with Shadcn UI and Tailwind CSS, minimal custom styling.
+- **Add Items**: Create new items with name, type, description, and multiple images
+- **View Items**: Browse your item collection in a grid layout
+- **Item Details**: Click on items to view detailed information with image carousel
+- **Local Storage**: Data persists in browser localStorage
+- **Responsive Design**: Works on desktop and mobile devices
+- **Dark/Light Mode**: Toggle between themes
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI + shadcn/ui
+- **Icons**: Lucide React
+- **State Management**: React Context API
+- **Notifications**: Sonner
 
 ## Getting Started
 
-1. **Install dependencies**
+### Prerequisites
 
-   ```bash
-   npm install
-   ```
+- Node.js 18+
+- npm or yarn
 
-2. **Run the development server**
+### Installation
 
-   ```bash
-   npm run dev
-   ```
+1. Clone the repository
 
-3. **Open the app**
-   Visit [http://localhost:3000](http://localhost:3000) in your browser.
+```bash
+git clone <repository-url>
+cd amrr-assignment
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run the development server
+
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Available Scripts
+
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
 ## Project Structure
 
-- `app/` - Next.js app directory (pages: Home, Add Item, View Items)
-- `components/` - UI and modal components (Shadcn-based)
-- `contexts/ItemContext.tsx` - React context for item state
-- `types/item.ts` - TypeScript types for items
-- `lib/utils.ts` - Utility for class name merging
+```
+amrr-assignment/
+├── app/                    # Next.js app router pages
+│   ├── add-item/          # Add new item form
+│   ├── view-items/        # Browse items grid
+│   └── page.tsx           # Home page
+├── components/            # Reusable UI components
+├── contexts/              # React context providers
+├── types/                 # TypeScript type definitions
+└── lib/                   # Utility functions
+```
 
-## Notes
+## Usage
 
-- No backend/API: All data is in localStorage for demo purposes.
-- No bonus features (API/email) implemented as per instructions.
-- UI is intentionally minimal and human-readable.
+1. **Home Page**: Navigate between adding items and viewing your collection
+2. **Add Item**: Fill out the form with item details and image URLs
+3. **View Items**: Browse your items in a responsive grid layout
+4. **Item Details**: Click any item to see full details with image carousel
 
----
+## Data Persistence
 
-**Submission for AMRR TechSols Pvt Ltd Internship Assignment**
+Items are stored in browser localStorage and persist between sessions. The app includes sample data for demonstration purposes.
